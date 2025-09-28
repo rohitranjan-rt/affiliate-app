@@ -1,10 +1,7 @@
 package com.affiliate.app.routes;
 
-import com.affiliate.app.handler.Handler;
 import com.affiliate.app.handler.ItemHandler;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
