@@ -8,13 +8,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "items")
@@ -37,10 +35,10 @@ public class Items {
     private String imageUrl;
 
     @Column
-    @CreatedDate
-    private Date createdAt;
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
-    @Column
-    @UpdateTimestamp
-    private Date updatedAt;
+    @UpdateTimestamp()
+    @Column(columnDefinition = "DATE")
+    private LocalDateTime lastUpdatedAt;
 }

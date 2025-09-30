@@ -1,8 +1,8 @@
 package com.affiliate.app.service;
 
 import com.affiliate.app.entity.Items;
+import com.affiliate.app.entity.ItemsUpdate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -10,13 +10,13 @@ import reactor.core.publisher.Mono;
 @Service
 public interface ItemService {
 
-    public Mono<Items> saveItem(Items item) ;
+    Mono<Items> saveItem(Items item);
 
-    public Flux<Items> getItems() ;
+    Flux<Items> getItems();
 
-    public Mono<ServerResponse> updateItem(ServerRequest request) ;
+    Mono<Items> updateItem(Long id, ItemsUpdate itemsMono);
 
-    public Mono<ServerResponse> deleteItem(Long id) ;
+    Mono<ServerResponse> deleteItem(Long id);
 
-    public Mono<Items> getItem(Long id);
+    Mono<Items> getItem(Long id);
 }
